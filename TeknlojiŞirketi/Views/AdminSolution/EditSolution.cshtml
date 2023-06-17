@@ -1,0 +1,28 @@
+﻿@model TeknlojiŞirketi.Models.Solution
+@{
+    ViewData["Title"] = "EditSolution";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Güncelleme sayfası</h1>
+@using (Html.BeginForm("EditSolution", "AdminSolution", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.Label("Solution")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Image")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+
+
+    </div>
+}
+

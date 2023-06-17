@@ -1,0 +1,28 @@
+﻿@using TeknlojiŞirketi.Concrete
+@model List<News>
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Datetime</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Title</th>
+            <th>@item.Description</th>
+            <th>@item.Image</th>
+            <th>@item.DateTime</th>
+        </tr>
+    }
+</table>
+<br />
+<a href="/News/AddNews" class="btn btn-info">new News</a>

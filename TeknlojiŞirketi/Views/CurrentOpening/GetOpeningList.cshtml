@@ -1,0 +1,28 @@
+﻿@using TeknlojiŞirketi.Concrete
+@model List<CurrentOpening>
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>tarih</th>
+        <th>Konum</th>
+
+    </tr>
+   @foreach (var item in Model)
+    {
+       <tr>
+           <th>@item.Id</th>
+           <th>@item.Name</th>
+           <th>@item.Description</th>
+           <th>@item.DateTime</th>
+           <th>@item.Location</th>
+       </tr>
+    }
+</table>
+<a href="/CurrentOpening/AddOpening" class="btn btn-info">new Opening</a>

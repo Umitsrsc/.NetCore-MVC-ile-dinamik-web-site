@@ -1,0 +1,29 @@
+﻿@model TeknlojiŞirketi.Models.Solution
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<h1>Solution ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddSolution", "Solution", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.Label("Solution")
+        @Html.TextBoxFor(x => x.Title)
+        @Html.ValidationMessageFor(x => x.Title)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextBoxFor(x => x.Description)
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Image")
+        @Html.TextBoxFor(x => x.Image)
+        @Html.ValidationMessageFor(x => x.Image)
+        <br /><br />
+        <button>Kaydet</button>
+
+
+    </div>
+}

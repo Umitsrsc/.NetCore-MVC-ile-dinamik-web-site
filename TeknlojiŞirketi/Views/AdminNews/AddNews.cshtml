@@ -1,0 +1,28 @@
+﻿@model TeknlojiŞirketi.Models.News
+@{
+    ViewData["Title"] = "AddNews";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddNews", "AdminNews", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Image")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+
+
+    </div>
+}

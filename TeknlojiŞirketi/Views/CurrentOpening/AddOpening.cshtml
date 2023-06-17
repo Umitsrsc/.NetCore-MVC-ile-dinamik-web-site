@@ -1,0 +1,36 @@
+﻿@model TeknlojiŞirketi.Models.CurrentOpening
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<h1>Yeni opening ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddOpening","CurrentOpening",FormMethod.Post))
+ {
+    <div class="from-group">
+        @Html.Label("Açık pozisyon")
+        @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextBoxFor(x => x.Description)
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Konum")
+        @Html.TextBoxFor(x => x.Location)
+        @Html.ValidationMessageFor(x => x.Location)
+        <br /><br />
+        <button>Kaydet</button>
+
+
+    </div>
+ }
+@*<form class="form-group" method="post">
+        <input type="text" placeholder="Pozisyon" name="Name" class="form-control" />
+        <input type="text" placeholder="Açıklama" name="Description" class="form-control" />
+        <input type="text" placeholder="Konum" name="Location" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>*@

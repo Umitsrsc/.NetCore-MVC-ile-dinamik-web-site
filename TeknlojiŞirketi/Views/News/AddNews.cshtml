@@ -1,0 +1,30 @@
+﻿@model TeknlojiŞirketi.Models.News
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<h1>Yeni opening ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddOpening", "CurrentOpening", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.Label("Açık pozisyon")
+        @Html.TextBoxFor(x => x.Title)
+        @Html.ValidationMessageFor(x => x.Title)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextBoxFor(x => x.Description)
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Konum")
+        @Html.TextBoxFor(x => x.Image)
+        @Html.ValidationMessageFor(x => x.Image)
+        <br /><br />
+        <button>Kaydet</button>
+
+
+    </div>
+
+}

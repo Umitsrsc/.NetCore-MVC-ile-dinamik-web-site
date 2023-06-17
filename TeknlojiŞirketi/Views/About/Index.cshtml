@@ -1,0 +1,30 @@
+﻿@using TeknlojiŞirketi.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda sayfası</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yazı 1</th>
+        <th>Yazı2</th>
+        <th>Aktif yap</th>
+        <th>Pasif yap</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Details1</td>
+            <td>@item.Details2</td>
+            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
+            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+        </tr>
+    }
+</table>
+
+
+@Html.Partial("AboutPartial")

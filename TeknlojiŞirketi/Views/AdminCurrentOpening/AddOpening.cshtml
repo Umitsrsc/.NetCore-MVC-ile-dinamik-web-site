@@ -1,0 +1,28 @@
+﻿@model TeknlojiŞirketi.Models.CurrentOpening
+@{
+    ViewData["Title"] = "AddOpening";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni opening ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddOpening", "AdminCurrentOpening", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.Label("Açık pozisyon")
+        @Html.TextBoxFor(x => x.Name,new {@class="form-control"})
+        @Html.ValidationMessageFor(x => x.Name)
+        <br /><br />
+        @Html.Label("AçıkLama")
+        @Html.TextAreaFor(x => x.Description ,new{ @class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Description)
+        <br /><br />
+        @Html.Label("Konum")
+        @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Location)
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+
+
+    </div>
+}
